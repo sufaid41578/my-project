@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Calculator
+    </title>
+    <style>
+      button {
+        width: 50px; height: 50px; background-color: yellow; 
+      }
+    </style>
+
+  </head>
+  <body>
+    <p class="result"></p>
+    
+    <p>
+      <button onclick="cal(1)">1</button>
+      <button onclick="cal(2)">2</button>
+      <button onclick="cal(3)">3</button>
+      <button onclick="cal('+')">+</button>
+    </p>
+    <p>
+      <button onclick="cal(4)">4</button>
+      <button onclick="cal(5)">5</button>
+      <button onclick="cal(6)">6</button>
+      <button onclick="cal('-')">-</button>
+    </p>
+    <p>
+      <button onclick="cal(7)">7</button>
+      <button onclick="cal(8)">8</button>
+      <button onclick="cal(9)">9</button>
+      <button onclick="cal('*')">*</button>
+    </p>
+    <p>
+      <button onclick="cal('.')">.</button>
+      <button onclick="cal(0)">0</button>
+      <button onclick="eval(calculation); calculation = eval(calculation); localStorage.setItem('calcu',calculation); result();">=</button>
+      <button onclick="cal('/')">/</button>    
+    </p>
+    <p>
+      <button onclick="calculation ='cleared';  calculation = ''; 
+       document.querySelector('.result').innerHTML = calculation;">clear</button>
+    </p>
+    <script>
+      
+      let calculation ='';
+
+      
+      function cal(num) {
+        calculation += num;console.log(calculation);
+
+        document.querySelector('.result').innerHTML = calculation;
+       
+      }
+      
+      function result(){
+        document.querySelector('.result').innerHTML = localStorage.getItem('calcu');
+      }
+
+      function num(){
+        document.querySelector('.result').innerHTML = calculation;
+      }
+    </script>
+
+  </body>
