@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Roll Battle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .dice-container {
+      display: flex;
+      justify-content: space-around;
+      margin: 1.5rem 0;
+    }
+
+    .dice {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    #result {
+      font-size: 1.5rem;
+      margin: 1.5rem 0;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dice Roll Battle</h1>
+    <div class="dice-container">
+      <div class="dice" id="dice1">-</div>
+      <div class="dice" id="dice2">-</div>
+    </div>
+    <div id="result">Click the button to roll the dice!</div>
+    <button onclick="rollDice()">Roll Dice</button>
+  </div>
+
+  <script>
+    function rollDice() {
+      const dice1 = Math.floor(Math.random() * 6) + 1;
+      const dice2 = Math.floor(Math.random() * 6) + 1;
+      document.getElementById('dice1').textContent = dice1;
+      document.getElementById('dice2').textContent = dice2;
+
+      if (dice1 > dice2) {
+        document.getElementById('result').textContent = 'Player 1 wins!';
+      } else if (dice2 > dice1) {
+        document.getElementById('result').textContent = 'Player 2 wins!';
+      } else {
+        document.getElementById('result').textContent = 'It\'s a tie!';
+      }
+    }
+  </script>
+</body>
+</html>
