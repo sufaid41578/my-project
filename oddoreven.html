@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>ODD OR EVEN</title>
+    <style>
+        #output {
+            font-size: 11px; 
+        }
+    </style>
+    <script>
+        function checkOddOrEven(){
+            var input = document.getElementById("number").value;
+            var result = "";
+            
+            for (var i = 1; i <= input; i++) {
+               
+                if (i % 2 === 0) {
+                    result += i + ' is an <span style="color: pink;">even</span><br>';
+                } else {
+                    result += i + ' is an <span style="color: violet;">odd</span><br>';
+                }
+            }
+          
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>ODD OR EVEN</h1>
+    <p>Enter a number: </p>
+    <input type="number" id="number">
+    <button onclick="checkOddOrEven()">Check</button>
+    <div id="output"></div>
+</body>
+</html>
