@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <title>Coin Toss Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    #result {
+      font-size: 2rem;
+      margin: 1.5rem 0;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Coin Toss Game</h1>
+    <div id="result">Click the button to toss the coin!</div>
+    <button onclick="tossCoin()">Toss Coin</button>
+  </div>
+
+  <script>
+    function tossCoin() {
+      const result = Math.random() < 0.5 ? 'Heads' : 'Tails';
+      document.getElementById('result').textContent = `Result: ${result}`;
+    }
+  </script>
+</body>
+</html>
